@@ -29,11 +29,7 @@ const Sidebar = ({ onNavigation }) => {
         </svg>
       ),
       subItems: [
-        { name: 'Demandes de visa', path: '/consul/visas' },
-        { name: 'Carte consulaire', path: '/consul/carte-consulaire' },
-        { name: 'Prise en charge', path: '/consul/prise-en-charge' },
-        { name: 'Laisser passer', path: '/consul/laisser-pass' },
-        { name: 'État civil', path: '/consul/civil-status' },
+        { name: 'Demandes consulaires', path: '/consul/demandes' },
         { name: 'Rendez-vous', path: '/consul/rendez-vous' }
       ]
     },

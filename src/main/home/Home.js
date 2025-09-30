@@ -13,7 +13,8 @@ import EventTable from '../../modules/govsecurity/securityevent/eventTable';
 import UserTable from '../../modules/govsecurity/suser/userTable';
 import AccountTable from '../../modules/govfinance/account/accountTable';
 import TransactionTable from '../../modules/govfinance/transaction/transactionTable';
-
+import CardTable from '../../modules/govconsul/cardData/cardTable';
+import AppointmentTable from '../../modules/govconsul/appointmentData/appointmentTable';
 const Home = () => {
   const [currentView, setCurrentView] = useState('dashboard');
   const [currentUser] = useState({
@@ -41,11 +42,17 @@ const Home = () => {
       case '/employees/operations':
         setCurrentView('employees-operations');
         break;
+        case '/consul/demandes':
+          setCurrentView('consul-requests');
+          break;
       case '/logistics/procurement':
         setCurrentView('logistics-procurement');
         break;
       case '/logistics/inventory':
         setCurrentView('logistics-inventory');
+        break;
+      case '/consul/rendez-vous':
+        setCurrentView('consul-appointments');
         break;
       case '/communication/announcements':
         setCurrentView('communication-announcements');
@@ -159,6 +166,10 @@ const Home = () => {
         return <EmployeList />;
       case 'employees-operations':
         return <EmployeOperations />;
+      case 'consul-requests':
+          return <CardTable />;
+      case 'consul-appointments':
+        return <AppointmentTable />;
       case 'logistics-procurement':
         return <AssetTable />;
       case 'logistics-inventory':
