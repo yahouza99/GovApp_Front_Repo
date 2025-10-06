@@ -30,6 +30,7 @@ const Sidebar = ({ onNavigation }) => {
       ),
       subItems: [
         { name: 'Demandes consulaires', path: '/consul/demandes' },
+        { name: 'Inscription Annuelle', path: '/consul/subscription' },
         { name: 'Rendez-vous', path: '/consul/rendez-vous' }
       ]
     },
@@ -109,13 +110,7 @@ const Sidebar = ({ onNavigation }) => {
         </svg>
       ),
       subItems: [
-        { name: 'Équivalences diplômes', path: '/academic/equivalences' },
-        { name: 'Attestations études', path: '/academic/attestations' },
-        { name: 'Bourses d\'études', path: '/academic/scholarships' },
-        { name: 'Activation de bourse', path: '/academic/activation-bourse' },
-        { name: 'Rénouvellement de bourse', path: '/academic/renew-bourse' },
-        { name: 'Partenariats universitaires', path: '/academic/partnerships' },
-        { name: 'Programmes d\'échange', path: '/academic/exchange-programs' }
+        { name: 'Bourse', path: '/academic/bourse' }
       ]
     },
     {

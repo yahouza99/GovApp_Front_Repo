@@ -15,6 +15,8 @@ import AccountTable from '../../modules/govfinance/account/accountTable';
 import TransactionTable from '../../modules/govfinance/transaction/transactionTable';
 import CardTable from '../../modules/govconsul/cardData/cardTable';
 import AppointmentTable from '../../modules/govconsul/appointmentData/appointmentTable';
+import SchollarshipTable from '../../modules/govacademic/schollarshipData/schollarshipTable';
+import SubscriptionTable from '../../modules/govcitizen/subscriptionData/subscriptionTable';
 const Home = () => {
   const [currentView, setCurrentView] = useState('dashboard');
   const [currentUser] = useState({
@@ -53,6 +55,12 @@ const Home = () => {
         break;
       case '/consul/rendez-vous':
         setCurrentView('consul-appointments');
+        break;
+      case '/academic/bourse':
+        setCurrentView('academic-schollarship');
+        break;
+      case '/consul/subscription':
+        setCurrentView('consul-subscription');
         break;
       case '/communication/announcements':
         setCurrentView('communication-announcements');
@@ -170,6 +178,10 @@ const Home = () => {
           return <CardTable />;
       case 'consul-appointments':
         return <AppointmentTable />;
+      case 'academic-schollarship':
+        return <SchollarshipTable />;
+      case 'consul-subscription':
+        return <SubscriptionTable />;
       case 'logistics-procurement':
         return <AssetTable />;
       case 'logistics-inventory':
@@ -320,6 +332,8 @@ const Home = () => {
                  currentView === 'security-users' ? 'Utilisateurs (Sécurité)' :
                  currentView === 'finance-accounts' ? 'Comptes' :
                  currentView === 'finance-transactions' ? 'Transactions' :
+                 currentView === 'academic-schollarship' ? 'Bourse' :
+                 currentView === 'consul-subscription' ? 'Inscription Annuelle' :
                  currentView === 'citizens-database' ? 'Liste de Citoyens' :
                  currentView === 'citizens-joboffers' ? "Offres d'emploi" :
                  currentView === 'citizens-applications' ? 'Candidatures' : 'Tableau de Bord'}
@@ -331,6 +345,7 @@ const Home = () => {
                  currentView === 'communication-announcements' ? 'Module Communication' :
                  (currentView === 'security-events' || currentView === 'security-users') ? 'Module Sécurité' :
                  (currentView === 'finance-accounts' || currentView === 'finance-transactions') ? 'Module Finance' :
+                 (currentView === 'academic-schollarship') ? 'Module Académiques' :
                  (currentView === 'citizens-database' || currentView === 'citizens-joboffers' || currentView === 'citizens-applications') ? 'Module Citoyens' : ''}
               </p>
               {currentView !== 'dashboard' && (
